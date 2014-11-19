@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ClassScheduler</string>
+    <string name="title_class_detail">Class Detail</string>
+    <string name="title_activity_create_new_class">CreateNewClass</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_time_picker">TimePicker</string>
+    <string name="create_new_class">Add new class</string>
+    <string name="title_select_time">Select Time</string>
+    <string name="title_add_new_class">Add New Class</string>
+    <string name="label_save">Save</string>
+    <string name="toast_empty_title">Title must not be empty</string>
+    <string name="title_day_detail">List O\' Classes</string>
+    <string name="title_activity_create_new_class2">CreateNewClass2</string>
+
+</resources>
