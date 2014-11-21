@@ -35,6 +35,7 @@ public class DayListActivity extends Activity
      * device.
      */
     private boolean mTwoPane;
+    private DayDetailFragment dayDetailFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,10 +71,10 @@ public class DayListActivity extends Activity
             // fragment transaction.
             Bundle arguments = new Bundle();
             arguments.putString(DayDetailFragment.ARG_ITEM_ID, id);
-            DayDetailFragment fragment = new DayDetailFragment();
-            fragment.setArguments(arguments);
+            dayDetailFragment = new DayDetailFragment();
+            dayDetailFragment.setArguments(arguments);
             getFragmentManager().beginTransaction()
-                    .replace(R.id.day_detail_container, fragment)
+                    .replace(R.id.day_detail_container, dayDetailFragment)
                     .commit();
 
         } else {
@@ -88,8 +89,12 @@ public class DayListActivity extends Activity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.activity_day_list, menu);
+        if (mTwoPane) {
+            getMenuInflater().inflate(R.menu.activity_day_list_twopane, menu);
+        } else {
+            // Inflate the menu; this adds items to the action bar if it is present.
+            getMenuInflater().inflate(R.menu.activity_day_list, menu);
+        }
         return true;
     }
 
@@ -108,7 +113,20 @@ public class DayListActivity extends Activity
                     .setNegativeButton(getString(R.string.label_cancel), null)
                     .show();
             return true;
+        } else if (id == R.id.action_new_class) {
+            makeNewClass();
+            return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void makeNewClass() {
+        // display dialog fragment with the message
+        CreateNewClass dialog = new CreateNewClass();
+        Bundle b = new Bundle();
+        // eventually generalize to edit
+        dialog.setArguments(b);
+        dialog.setTargetFragment(dayDetailFragment, DayDetailActivity.REQUEST_CODE_NEW_CLASS);
+        dialog.show(getFragmentManager(), CreateNewClass.TAG);
     }
 }

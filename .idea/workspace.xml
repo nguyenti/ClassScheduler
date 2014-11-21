@@ -31,8 +31,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b41ba8f1-3ac0-4e6a-bcc9-a485237ddcca" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/CreateNewClass.java" afterPath="$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/CreateNewClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/menu/activity_day_list_twopane.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/DayListActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/DayListActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_create_new_class.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_create_new_class.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ClassScheduler.iws" />
@@ -90,11 +91,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateNewClass.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DayListActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/DayListActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="1920">
+              <caret line="102" column="34" selection-start-line="102" selection-start-column="34" selection-end-line="102" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateNewClass.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/CreateNewClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42299348" vertical-offset="1815" max-vertical-offset="2430">
-              <caret line="169" column="71" selection-start-line="169" selection-start-column="71" selection-end-line="169" selection-end-column="71" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1039" max-vertical-offset="2430">
+              <caret line="174" column="47" selection-start-line="174" selection-start-column="47" selection-end-line="174" selection-end-column="47" />
               <folding>
                 <element signature="e#3550#3591#0" expanded="true" />
                 <element signature="e#4348#5317#0" expanded="true" />
@@ -110,11 +121,29 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="dialog_create_new_class.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_create_new_class.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1245">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#411#446#0" expanded="true" />
+                <element signature="e#476#511#0" expanded="true" />
+                <element signature="e#539#572#0" expanded="true" />
+                <element signature="e#603#636#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="DayDetailActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/DayDetailActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="366" max-vertical-offset="1380">
-              <caret line="52" column="9" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="1380">
+              <caret line="69" column="14" selection-start-line="69" selection-start-column="14" selection-end-line="69" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -1244,14 +1273,15 @@
         <option value="$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/data/MyClass.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/data/MyClass.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/DayListActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/DayListActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_create_new_class.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/data/DayItem.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/DayDetailFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/DayDetailFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/DayDetailActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/CreateNewClass.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/activity_day_list_twopane.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/DayDetailActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/DayListActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/DayListActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_create_new_class.xml" />
       </list>
     </option>
   </component>
@@ -1385,6 +1415,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ClassScheduler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ClassScheduler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values-land" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1883,7 +1943,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32761088" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32761088" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25231177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39863715" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1893,7 +1953,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.336856" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.336856" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2145,16 +2205,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_day_twopane.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.79405034" vertical-offset="223" max-vertical-offset="660">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_day_detail.xml">
       <provider editor-type-id="android-designer">
         <state />
@@ -2243,14 +2293,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/class_list.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22776572" vertical-offset="0" max-vertical-offset="461">
-          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/DayDetailActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1110" max-vertical-offset="1275">
@@ -2291,29 +2333,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_create_new_class.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.93317974" vertical-offset="0" max-vertical-offset="1290">
-          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/adapter/ClassAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1140" max-vertical-offset="1305">
           <caret line="76" column="9" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/DayListActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.3977695" vertical-offset="0" max-vertical-offset="1650">
-          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2342,6 +2365,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_day_twopane.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0" vertical-offset="72" max-vertical-offset="660">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-land/refs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16728625" vertical-offset="0" max-vertical-offset="538">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/DayDetailFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1227" max-vertical-offset="1815">
@@ -2354,18 +2396,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/class_list.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08571429" vertical-offset="0" max-vertical-offset="525">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="7" selection-end-column="47" />
+          <folding>
+            <element signature="e#295#317#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/activity_day_list_twopane.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14285715" vertical-offset="0" max-vertical-offset="525">
+          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+          <folding>
+            <element signature="e#300#320#0" expanded="false" />
+            <element signature="e#300#320#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/activity_day_list.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22857143" vertical-offset="0" max-vertical-offset="525">
+          <caret line="8" column="7" selection-start-line="2" selection-start-column="0" selection-end-line="8" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/DayDetailActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="366" max-vertical-offset="1380">
-          <caret line="52" column="9" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="1380">
+          <caret line="69" column="14" selection-start-line="69" selection-start-column="14" selection-end-line="69" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/DayListActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="1920">
+          <caret line="102" column="34" selection-start-line="102" selection-start-column="34" selection-end-line="102" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/CreateNewClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42299348" vertical-offset="1815" max-vertical-offset="2430">
-          <caret line="169" column="71" selection-start-line="169" selection-start-column="71" selection-end-line="169" selection-end-column="71" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1759" max-vertical-offset="2430">
+          <caret line="174" column="47" selection-start-line="174" selection-start-column="47" selection-end-line="174" selection-end-column="47" />
           <folding>
             <element signature="e#3550#3591#0" expanded="true" />
             <element signature="e#4348#5317#0" expanded="true" />
@@ -2376,6 +2455,22 @@
             <element signature="e#6368#9328#0" expanded="true" />
             <element signature="e#8742#8783#0" expanded="true" />
             <element signature="e#9317#9318#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_create_new_class.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1245">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#411#446#0" expanded="true" />
+            <element signature="e#476#511#0" expanded="true" />
+            <element signature="e#539#572#0" expanded="true" />
+            <element signature="e#603#636#0" expanded="true" />
           </folding>
         </state>
       </provider>
