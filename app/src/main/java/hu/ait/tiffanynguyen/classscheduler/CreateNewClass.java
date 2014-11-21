@@ -29,7 +29,6 @@ import hu.ait.tiffanynguyen.classscheduler.data.MyClass;
 public class CreateNewClass extends DialogFragment {
 
     public static final String TAG = "CreateClassFragment";
-//    final Resources res = getResources();
 
     public interface NewClassDialogListener {
         void onFinishNewDialog();
@@ -81,7 +80,6 @@ public class CreateNewClass extends DialogFragment {
                     }
                 }, initStartDate.get(Calendar.HOUR_OF_DAY), initStartDate.get(Calendar.MINUTE), true);
                 mTimePicker.setTitle(res.getString(R.string.title_select_time));
-//                    mTimePicker.setTitle("Select Time");
                 mTimePicker.show();
             }
         });
@@ -110,7 +108,6 @@ public class CreateNewClass extends DialogFragment {
                                 initEndDate.setTimeInMillis((selectedMinute * 60 + selectedHour * 3600) * 1000);
                             }
                         }, initEndDate.get(Calendar.HOUR_OF_DAY), initEndDate.get(Calendar.MINUTE), true);
-//                mTimePicker.setTitle("Select Time");
                 mTimePicker.setTitle(res.getString(R.string.title_select_time));
                 mTimePicker.show();
             }
@@ -130,8 +127,6 @@ public class CreateNewClass extends DialogFragment {
 
         final AlertDialog builder = new AlertDialog.Builder(getActivity())
                 .setView(dialoglayout)
-//                .setTitle("Add New Class")
-//                .setPositiveButton("Save", null)
                 .setTitle(res.getString(R.string.title_add_new_class))
                 .setPositiveButton(res.getString(R.string.label_save), null)
                 .create();
@@ -180,6 +175,8 @@ public class CreateNewClass extends DialogFragment {
                                 Toast.makeText(getActivity().getApplicationContext(),
                                         res.getString(R.string.message_start_end_time),
                                         Toast.LENGTH_LONG).show();
+                            else
+                                e.printStackTrace();
                         }
                     }
                 });

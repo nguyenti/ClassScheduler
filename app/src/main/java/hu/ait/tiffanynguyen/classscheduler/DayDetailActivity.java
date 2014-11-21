@@ -82,8 +82,8 @@ public class DayDetailActivity extends Activity {
     private void makeNewClass() {
         // display dialog fragment with the message
         CreateNewClass dialog = new CreateNewClass();
+        // empty to allow for editing
         Bundle b = new Bundle();
-        // eventually generalize to edit
         dialog.setArguments(b);
         dialog.setTargetFragment(dayDetailFragment, REQUEST_CODE_NEW_CLASS);
         dialog.show(getFragmentManager(), CreateNewClass.TAG);

@@ -74,7 +74,7 @@ public class DayListActivity extends Activity
             dayDetailFragment = new DayDetailFragment();
             dayDetailFragment.setArguments(arguments);
             getFragmentManager().beginTransaction()
-                    .replace(R.id.day_detail_container, dayDetailFragment)
+                    .replace(R.id.day_detail_container, dayDetailFragment, DayDetailFragment.TAG_DETAIL_FRAGMENT)
                     .commit();
 
         } else {
@@ -123,8 +123,8 @@ public class DayListActivity extends Activity
     private void makeNewClass() {
         // display dialog fragment with the message
         CreateNewClass dialog = new CreateNewClass();
+        // empty for editing
         Bundle b = new Bundle();
-        // eventually generalize to edit
         dialog.setArguments(b);
         dialog.setTargetFragment(dayDetailFragment, DayDetailActivity.REQUEST_CODE_NEW_CLASS);
         dialog.show(getFragmentManager(), CreateNewClass.TAG);
