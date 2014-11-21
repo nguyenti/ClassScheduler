@@ -48,7 +48,7 @@ public class DayDetailActivity extends Activity {
             dayDetailFragment = new DayDetailFragment();
             dayDetailFragment.setArguments(arguments);
             getFragmentManager().beginTransaction()
-                    .add(R.id.day_detail_container, dayDetailFragment)
+                    .add(R.id.day_detail_container, dayDetailFragment, DayDetailFragment.TAG_DETAIL_FRAGMENT)
                     .commit();
         }
     }

@@ -40,6 +40,14 @@ public class CreateNewClass extends DialogFragment {
         final Resources res = getResources();
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View dialoglayout = inflater.inflate(R.layout.dialog_create_new_class, null);
+        boolean editing = false;
+        MyClass myClass = null;
+
+        if (getArguments().containsKey(DayDetailFragment.KEY_CLASS_ITEM)) {
+            editing = true;
+            myClass = MyClass.findById(MyClass.class,
+                    getArguments().getLong(DayDetailFragment.KEY_CLASS_ITEM));
+        }
 
         final Spinner spinnerClassDay = (Spinner) dialoglayout.findViewById(R.id.spinnerClassDay);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
@@ -51,11 +59,15 @@ public class CreateNewClass extends DialogFragment {
 
         final Button btnStartDate = (Button) dialoglayout.findViewById(R.id.btnStartTime);
         final Calendar initStartDate = new GregorianCalendar();
-        // reset hour, minutes, seconds and millis
-        initStartDate.set(Calendar.HOUR_OF_DAY, 0);
-        initStartDate.set(Calendar.MINUTE, 0);
-        initStartDate.set(Calendar.SECOND, 0);
-        initStartDate.set(Calendar.MILLISECOND, 0);
+        if (editing) {
+            initStartDate.setTimeInMillis(myClass.getStartTime());
+        } else {
+            // reset hour, minutes, seconds and millis
+            initStartDate.set(Calendar.HOUR_OF_DAY, 0);
+            initStartDate.set(Calendar.MINUTE, 0);
+            initStartDate.set(Calendar.SECOND, 0);
+            initStartDate.set(Calendar.MILLISECOND, 0);
+        }
         btnStartDate.setText(date_format.format(initStartDate.getTime()));
         btnStartDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,11 +88,15 @@ public class CreateNewClass extends DialogFragment {
 
         final Button btnEndDate = (Button) dialoglayout.findViewById(R.id.btnEndTime);
         final Calendar initEndDate = new GregorianCalendar();
-        // reset hour, minutes, seconds and millis
-        initEndDate.set(Calendar.HOUR_OF_DAY, 0);
-        initEndDate.set(Calendar.MINUTE, 0);
-        initEndDate.set(Calendar.SECOND, 0);
-        initEndDate.set(Calendar.MILLISECOND, 0);
+        if (editing) {
+            initEndDate.setTimeInMillis(myClass.getEndTime());
+        } else {
+            // reset hour, minutes, seconds and millis
+            initEndDate.set(Calendar.HOUR_OF_DAY, 0);
+            initEndDate.set(Calendar.MINUTE, 0);
+            initEndDate.set(Calendar.SECOND, 0);
+            initEndDate.set(Calendar.MILLISECOND, 0);
+        }
         btnEndDate.setText(date_format.format(initEndDate.getTime()));
         btnEndDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,6 +120,14 @@ public class CreateNewClass extends DialogFragment {
         final EditText etDesc = (EditText) dialoglayout.findViewById(R.id.etClassDesc);
         final EditText etLocation = (EditText) dialoglayout.findViewById(R.id.etClassLocation);
 
+        // deal with presets if editing
+        if (editing) {
+            spinnerClassDay.setSelection(myClass.getDay().getIntValue());
+            etTitle.setText(myClass.getTitle());
+            etDesc.setText(myClass.getDescription());
+            etLocation.setText(myClass.getLocation());
+        }
+
         final AlertDialog builder = new AlertDialog.Builder(getActivity())
                 .setView(dialoglayout)
 //                .setTitle("Add New Class")
@@ -112,6 +136,7 @@ public class CreateNewClass extends DialogFragment {
                 .setPositiveButton(res.getString(R.string.label_save), null)
                 .create();
 
+        final boolean finalEditing = editing;
         builder.setOnShowListener(new DialogInterface.OnShowListener() {
 
             @Override
@@ -127,22 +152,34 @@ public class CreateNewClass extends DialogFragment {
                                 throw new Exception();
 //                            Log.i("LOG_INFO", FormatDate.unformat(btnStartDate.getText().toString())+" "+
 //                                    FormatDate.unformat(btnEndDate.getText().toString()));
-                            new MyClass(etTitle.getText().toString(), etDesc.getText().toString(),
-                                    etLocation.getText().toString(), FormatDate.unformat(btnStartDate.getText().toString()),
-                                    FormatDate.unformat(btnEndDate.getText().toString()),
-                                    DayItem.DayType.fromInt(spinnerClassDay.getSelectedItemPosition())).save();
 
+                            if (finalEditing) {
+                                MyClass it = MyClass.findById(MyClass.class,
+                                        getArguments().getLong(DayDetailFragment.KEY_CLASS_ITEM));
+                                it.setTitle(etTitle.getText().toString());
+                                it.setDescription(etDesc.getText().toString());
+                                it.setLocation(etLocation.getText().toString());
+                                it.setStartTime(FormatDate.unformat(btnStartDate.getText().toString()));
+                                it.setEndTime(FormatDate.unformat(btnEndDate.getText().toString()));
+                                it.setDay(DayItem.DayType.fromInt(spinnerClassDay.getSelectedItemPosition()));
+                                it.save();
+                            } else {
+                                new MyClass(etTitle.getText().toString(), etDesc.getText().toString(),
+                                        etLocation.getText().toString(), FormatDate.unformat(btnStartDate.getText().toString()),
+                                        FormatDate.unformat(btnEndDate.getText().toString()),
+                                        DayItem.DayType.fromInt(spinnerClassDay.getSelectedItemPosition())).save();
+                            }
                             ((NewClassDialogListener)getTargetFragment()).onFinishNewDialog();
 
                             builder.dismiss();
                         } catch (Exception e) {
-//                            Toast.makeText(getActivity().getApplicationContext(), "Title must not be empty", Toast.LENGTH_LONG).show();
                             Toast.makeText(getActivity().getApplicationContext(), res.getString(R.string.toast_empty_title), Toast.LENGTH_LONG).show();
                         }
                     }
                 });
             }
         });
+
 
         return builder;
     }

@@ -31,11 +31,14 @@ public class DayDetailFragment extends ListFragment implements CreateNewClass.Ne
      * represents.
      */
     public static final String ARG_ITEM_ID = "item_id";
+    public static final String KEY_CLASS_ITEM = "KEY_CLASS";
+    public static final String TAG_DETAIL_FRAGMENT = "TAG_DETAIL_FRAGMENT";
 
     /**
      * The dummy content this fragment is presenting.
      */
     private DayItem mItem;
+    private List<MyClass> classList;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -80,17 +83,18 @@ public class DayDetailFragment extends ListFragment implements CreateNewClass.Ne
         getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-//                Log.i("LOG_CLICK", "Clicked "+position);
-//                // selected item
-////                MyClass myClass = (MyClass) getListAdapter().getItem(position);
-//
-//                // display dialog fragment with the message
-//                CreateNewClass dialog = new CreateNewClass();
-//                Bundle b = new Bundle();
-//                // eventually generalize to edit
-//                dialog.setArguments(b);
-//                dialog.setTargetFragment(getParentFragment(), DayDetailActivity.REQUEST_CODE_NEW_CLASS);
-//                dialog.show(getFragmentManager(), CreateNewClass.TAG);
+                Log.i("LOG_CLICK", "Clicked "+position);
+                // selected item
+                Long myClassId = classList.get(position).getId();
+
+                // display dialog fragment with the message
+                CreateNewClass dialog = new CreateNewClass();
+                Bundle b = new Bundle();
+                b.putLong(KEY_CLASS_ITEM, myClassId);
+                // eventually generalize to edit
+                dialog.setArguments(b);
+                dialog.setTargetFragment(getActivity().getFragmentManager().findFragmentByTag(TAG_DETAIL_FRAGMENT), DayDetailActivity.REQUEST_CODE_NEW_CLASS);
+                dialog.show(getFragmentManager(), CreateNewClass.TAG);
             }
         });
 
@@ -98,7 +102,7 @@ public class DayDetailFragment extends ListFragment implements CreateNewClass.Ne
     }
 
     private void refreshList() {
-        List<MyClass> classList = Select.from(MyClass.class).where(Condition.prop("day")
+        classList = Select.from(MyClass.class).where(Condition.prop("day")
                 .eq(mItem.getDay())).orderBy("start_time").list();
 
         ClassAdapter adapter = new ClassAdapter(getActivity().getApplicationContext(),
