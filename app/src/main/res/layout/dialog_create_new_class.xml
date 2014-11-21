@@ -11,12 +11,12 @@
 
     <EditText
         android:id="@+id/etClassTitle"
-        android:hint="Class Title"
+        android:hint="@string/hint_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <TextView
-        android:text="Day of the week:"
+        android:text="@string/text_day_of_week"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:text="From:"
+            android:text="@string/text_from"
             android:textSize="20sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:text="To:"
+            android:text="@string/text_to"
             android:textSize="20sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -61,14 +61,13 @@
 
     <EditText
         android:id="@+id/etClassDesc"
-        android:hint="Description"
+        android:hint="@string/hint_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/etClassLocation"
-        android:hint="Where"
-        android:inputType="numberDecimal"
+        android:hint="@string/hint_where"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

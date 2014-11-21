@@ -20,5 +20,11 @@
     <string name="message_reaffirm_delete">Are you sure you want to delete all classes?</string>
     <string name="label_ok">OK</string>
     <string name="label_cancel">Cancel</string>
+    <string name="hint_description">Description</string>
+    <string name="hint_where">Where</string>
+    <string name="text_to">To:</string>
+    <string name="text_from">From:</string>
+    <string name="text_day_of_week">Day of the week:</string>
+    <string name="hint_title">Class Title</string>
 
 </resources>
