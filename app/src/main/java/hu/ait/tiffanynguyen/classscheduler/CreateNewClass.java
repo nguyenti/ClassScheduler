@@ -148,10 +148,10 @@ public class CreateNewClass extends DialogFragment {
                     @Override
                     public void onClick(View view) {
                         try {
-                            if (etTitle.getText().toString().matches(""))
+                            if (etTitle.getText().toString().matches("")
+                                    || FormatDate.unformat(btnEndDate.getText().toString())
+                                        < FormatDate.unformat(btnStartDate.getText().toString()))
                                 throw new Exception();
-//                            Log.i("LOG_INFO", FormatDate.unformat(btnStartDate.getText().toString())+" "+
-//                                    FormatDate.unformat(btnEndDate.getText().toString()));
 
                             if (finalEditing) {
                                 MyClass it = MyClass.findById(MyClass.class,
@@ -173,7 +173,13 @@ public class CreateNewClass extends DialogFragment {
 
                             builder.dismiss();
                         } catch (Exception e) {
-                            Toast.makeText(getActivity().getApplicationContext(), res.getString(R.string.toast_empty_title), Toast.LENGTH_LONG).show();
+                            if (etTitle.getText().toString().matches(""))
+                                Toast.makeText(getActivity().getApplicationContext(), res.getString(R.string.toast_empty_title), Toast.LENGTH_LONG).show();
+                            else if (FormatDate.unformat(btnEndDate.getText().toString())
+                                    < FormatDate.unformat(btnStartDate.getText().toString()))
+                                Toast.makeText(getActivity().getApplicationContext(),
+                                        res.getString(R.string.message_start_end_time),
+                                        Toast.LENGTH_LONG).show();
                         }
                     }
                 });

@@ -26,5 +26,6 @@
     <string name="text_from">From:</string>
     <string name="text_day_of_week">Day of the week:</string>
     <string name="hint_title">Class Title</string>
+    <string name="message_start_end_time">Please make sure the start time is before the end time</string>
 
 </resources>

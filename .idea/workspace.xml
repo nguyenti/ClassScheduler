@@ -32,9 +32,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b41ba8f1-3ac0-4e6a-bcc9-a485237ddcca" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/CreateNewClass.java" afterPath="$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/CreateNewClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/DayDetailActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/DayDetailActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/DayDetailFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/DayDetailFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/data/DayItem.java" afterPath="$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/data/DayItem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ClassScheduler.iws" />
@@ -95,15 +93,18 @@
       <file leaf-file-name="CreateNewClass.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/CreateNewClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5596529" vertical-offset="1677" max-vertical-offset="2340">
-              <caret line="164" column="42" selection-start-line="164" selection-start-column="42" selection-end-line="164" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.42299348" vertical-offset="1815" max-vertical-offset="2430">
+              <caret line="169" column="71" selection-start-line="169" selection-start-column="71" selection-end-line="169" selection-end-column="71" />
               <folding>
+                <element signature="e#3550#3591#0" expanded="true" />
                 <element signature="e#4348#5317#0" expanded="true" />
                 <element signature="e#5214#5255#0" expanded="true" />
                 <element signature="e#5306#5307#0" expanded="true" />
-                <element signature="e#6368#8837#0" expanded="true" />
-                <element signature="e#8676#8717#0" expanded="true" />
-                <element signature="e#8826#8827#0" expanded="true" />
+                <element signature="e#6138#6181#0" expanded="true" />
+                <element signature="e#6218#6252#0" expanded="true" />
+                <element signature="e#6368#9328#0" expanded="true" />
+                <element signature="e#8742#8783#0" expanded="true" />
+                <element signature="e#9317#9318#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1892,7 +1893,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.336856" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.336856" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2004,12 +2005,15 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="945" max-vertical-offset="2325">
           <caret line="63" column="32" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
           <folding>
+            <element signature="e#3550#3591#0" expanded="true" />
             <element signature="e#4348#5317#0" expanded="true" />
             <element signature="e#5214#5255#0" expanded="true" />
             <element signature="e#5306#5307#0" expanded="true" />
-            <element signature="e#6368#8837#0" expanded="true" />
-            <element signature="e#8676#8717#0" expanded="true" />
-            <element signature="e#8826#8827#0" expanded="true" />
+            <element signature="e#6138#6181#0" expanded="true" />
+            <element signature="e#6218#6252#0" expanded="true" />
+            <element signature="e#6368#9328#0" expanded="true" />
+            <element signature="e#8742#8783#0" expanded="true" />
+            <element signature="e#9317#9318#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2071,12 +2075,15 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="975" max-vertical-offset="2295">
           <caret line="65" column="32" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
           <folding>
+            <element signature="e#3550#3591#0" expanded="true" />
             <element signature="e#4348#5317#0" expanded="true" />
             <element signature="e#5214#5255#0" expanded="true" />
             <element signature="e#5306#5307#0" expanded="true" />
-            <element signature="e#6368#8837#0" expanded="true" />
-            <element signature="e#8676#8717#0" expanded="true" />
-            <element signature="e#8826#8827#0" expanded="true" />
+            <element signature="e#6138#6181#0" expanded="true" />
+            <element signature="e#6218#6252#0" expanded="true" />
+            <element signature="e#6368#9328#0" expanded="true" />
+            <element signature="e#8742#8783#0" expanded="true" />
+            <element signature="e#9317#9318#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2357,15 +2364,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/hu/ait/tiffanynguyen/classscheduler/CreateNewClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5596529" vertical-offset="1677" max-vertical-offset="2340">
-          <caret line="164" column="42" selection-start-line="164" selection-start-column="42" selection-end-line="164" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.42299348" vertical-offset="1815" max-vertical-offset="2430">
+          <caret line="169" column="71" selection-start-line="169" selection-start-column="71" selection-end-line="169" selection-end-column="71" />
           <folding>
+            <element signature="e#3550#3591#0" expanded="true" />
             <element signature="e#4348#5317#0" expanded="true" />
             <element signature="e#5214#5255#0" expanded="true" />
             <element signature="e#5306#5307#0" expanded="true" />
-            <element signature="e#6368#8837#0" expanded="true" />
-            <element signature="e#8676#8717#0" expanded="true" />
-            <element signature="e#8826#8827#0" expanded="true" />
+            <element signature="e#6138#6181#0" expanded="true" />
+            <element signature="e#6218#6252#0" expanded="true" />
+            <element signature="e#6368#9328#0" expanded="true" />
+            <element signature="e#8742#8783#0" expanded="true" />
+            <element signature="e#9317#9318#0" expanded="true" />
           </folding>
         </state>
       </provider>
