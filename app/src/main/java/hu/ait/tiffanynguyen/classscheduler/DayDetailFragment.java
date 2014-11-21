@@ -1,6 +1,8 @@
 package hu.ait.tiffanynguyen.classscheduler;
 
+import android.app.AlertDialog;
 import android.app.ListFragment;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -83,7 +85,6 @@ public class DayDetailFragment extends ListFragment implements CreateNewClass.Ne
         getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                Log.i("LOG_CLICK", "Clicked "+position);
                 // selected item
                 Long myClassId = classList.get(position).getId();
 
@@ -98,7 +99,25 @@ public class DayDetailFragment extends ListFragment implements CreateNewClass.Ne
             }
         });
 
-        refreshList();
+        getListView().setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
+                new AlertDialog.Builder(getActivity())
+                        .setTitle(getString(R.string.title_delete_class))
+                        .setMessage(getString(R.string.message_delete_affirm))
+                        .setPositiveButton(getString(R.string.label_ok), new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                MyClass.findById(MyClass.class, classList.get(position).getId()).delete();
+                                refreshList();
+                            }
+                        })
+                        .setNegativeButton(getString(R.string.label_cancel), null)
+                        .show();
+                return true;
+            }
+        });
+
+                refreshList();
     }
 
     private void refreshList() {

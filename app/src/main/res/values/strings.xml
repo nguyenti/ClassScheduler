@@ -27,5 +27,7 @@
     <string name="text_day_of_week">Day of the week:</string>
     <string name="hint_title">Class Title</string>
     <string name="message_start_end_time">Please make sure the start time is before the end time</string>
+    <string name="title_delete_class">Delete Class</string>
+    <string name="message_delete_affirm">Do you want to delete this class?</string>
 
 </resources>
