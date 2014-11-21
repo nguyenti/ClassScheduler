@@ -19,6 +19,9 @@ import android.view.MenuItem;
  */
 public class DayDetailActivity extends Activity {
 
+    public static final int REQUEST_CODE_NEW_CLASS = 101;
+    private DayDetailFragment dayDetailFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,10 +45,10 @@ public class DayDetailActivity extends Activity {
             Bundle arguments = new Bundle();
             arguments.putString(DayDetailFragment.ARG_ITEM_ID,
                     getIntent().getStringExtra(DayDetailFragment.ARG_ITEM_ID));
-            DayDetailFragment fragment = new DayDetailFragment();
-            fragment.setArguments(arguments);
+            dayDetailFragment = new DayDetailFragment();
+            dayDetailFragment.setArguments(arguments);
             getFragmentManager().beginTransaction()
-                    .add(R.id.day_detail_container, fragment)
+                    .add(R.id.day_detail_container, dayDetailFragment)
                     .commit();
         }
     }
@@ -82,6 +85,7 @@ public class DayDetailActivity extends Activity {
         Bundle b = new Bundle();
         // eventually generalize to edit
         dialog.setArguments(b);
+        dialog.setTargetFragment(dayDetailFragment, REQUEST_CODE_NEW_CLASS);
         dialog.show(getFragmentManager(), CreateNewClass.TAG);
     }
 }

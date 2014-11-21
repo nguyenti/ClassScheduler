@@ -13,7 +13,7 @@
             android:value="app_classes.db" />
         <meta-data
             android:name="VERSION"
-            android:value="2" />
+            android:value="8" />
         <meta-data
             android:name="QUERY_LOG"
             android:value="true" />

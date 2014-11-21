@@ -73,7 +73,7 @@ public class ClassAdapter extends BaseAdapter {
         if (c != null) {
             ViewHolder holder = (ViewHolder) v.getTag();
             holder.classTitle.setText(c.getTitle());
-            holder.classTime.setText(FormatDate.format(c.getStartTime(), c.getEndTime()));
+            holder.classTime.setText(FormatDate.format(c.getStartTime()) + "-" + FormatDate.format(c.getEndTime()));
         }
 
         return v;

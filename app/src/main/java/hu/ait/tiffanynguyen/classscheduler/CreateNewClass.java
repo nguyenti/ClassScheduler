@@ -5,7 +5,9 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -35,6 +37,7 @@ public class CreateNewClass extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+        final Resources res = getResources();
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View dialoglayout = inflater.inflate(R.layout.dialog_create_new_class, null);
 
@@ -47,13 +50,13 @@ public class CreateNewClass extends DialogFragment {
         SimpleDateFormat date_format = new SimpleDateFormat("HH:mm");
 
         final Button btnStartDate = (Button) dialoglayout.findViewById(R.id.btnStartTime);
-        final Calendar initDate = new GregorianCalendar();
+        final Calendar initStartDate = new GregorianCalendar();
         // reset hour, minutes, seconds and millis
-        initDate.set(Calendar.HOUR_OF_DAY, 0);
-        initDate.set(Calendar.MINUTE, 0);
-        initDate.set(Calendar.SECOND, 0);
-        initDate.set(Calendar.MILLISECOND, 0);
-        btnStartDate.setText(date_format.format(initDate.getTime()));
+        initStartDate.set(Calendar.HOUR_OF_DAY, 0);
+        initStartDate.set(Calendar.MINUTE, 0);
+        initStartDate.set(Calendar.SECOND, 0);
+        initStartDate.set(Calendar.MILLISECOND, 0);
+        btnStartDate.setText(date_format.format(initStartDate.getTime()));
         btnStartDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,18 +64,24 @@ public class CreateNewClass extends DialogFragment {
                 mTimePicker = new TimePickerDialog(getActivity(), new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                        btnStartDate.setText(String.format("%02d", selectedHour) + ":" +
-                                String.format("%02d", selectedMinute));
+                        btnStartDate.setText(FormatDate.format(selectedHour, selectedMinute));
+                        initStartDate.setTimeInMillis((selectedMinute * 60 + selectedHour * 3600) * 1000);
                     }
-                }, initDate.get(Calendar.HOUR_OF_DAY), initDate.get(Calendar.MINUTE), true);
-//                mTimePicker.setTitle(res.getString(R.string.title_select_time));
-                mTimePicker.setTitle("Select Time");
+                }, initStartDate.get(Calendar.HOUR_OF_DAY), initStartDate.get(Calendar.MINUTE), true);
+                mTimePicker.setTitle(res.getString(R.string.title_select_time));
+//                    mTimePicker.setTitle("Select Time");
                 mTimePicker.show();
             }
         });
 
         final Button btnEndDate = (Button) dialoglayout.findViewById(R.id.btnEndTime);
-        btnEndDate.setText(date_format.format(initDate.getTime()));
+        final Calendar initEndDate = new GregorianCalendar();
+        // reset hour, minutes, seconds and millis
+        initEndDate.set(Calendar.HOUR_OF_DAY, 0);
+        initEndDate.set(Calendar.MINUTE, 0);
+        initEndDate.set(Calendar.SECOND, 0);
+        initEndDate.set(Calendar.MILLISECOND, 0);
+        btnEndDate.setText(date_format.format(initEndDate.getTime()));
         btnEndDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,11 +90,12 @@ public class CreateNewClass extends DialogFragment {
                         new TimePickerDialog.OnTimeSetListener() {
                             @Override
                             public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                                btnEndDate.setText(String.format("%02d", selectedHour) + ":" +
-                                        String.format("%02d", selectedMinute));
+                                btnEndDate.setText(FormatDate.format(selectedHour, selectedMinute));
+                                initEndDate.setTimeInMillis((selectedMinute * 60 + selectedHour * 3600) * 1000);
                             }
-                        }, initDate.get(Calendar.HOUR_OF_DAY), initDate.get(Calendar.MINUTE), true);
-                mTimePicker.setTitle("Select Time");
+                        }, initEndDate.get(Calendar.HOUR_OF_DAY), initEndDate.get(Calendar.MINUTE), true);
+//                mTimePicker.setTitle("Select Time");
+                mTimePicker.setTitle(res.getString(R.string.title_select_time));
                 mTimePicker.show();
             }
         });
@@ -96,10 +106,10 @@ public class CreateNewClass extends DialogFragment {
 
         final AlertDialog builder = new AlertDialog.Builder(getActivity())
                 .setView(dialoglayout)
-                .setTitle("Add New Class")
-                .setPositiveButton("Save", null)
-//                .setTitle(res.getString(R.string.title_add_new_class))
-//                .setPositiveButton(res.getString(R.string.label_save), null)
+//                .setTitle("Add New Class")
+//                .setPositiveButton("Save", null)
+                .setTitle(res.getString(R.string.title_add_new_class))
+                .setPositiveButton(res.getString(R.string.label_save), null)
                 .create();
 
         builder.setOnShowListener(new DialogInterface.OnShowListener() {
@@ -115,15 +125,19 @@ public class CreateNewClass extends DialogFragment {
                         try {
                             if (etTitle.getText().toString().matches(""))
                                 throw new Exception();
-
+//                            Log.i("LOG_INFO", FormatDate.unformat(btnStartDate.getText().toString())+" "+
+//                                    FormatDate.unformat(btnEndDate.getText().toString()));
                             new MyClass(etTitle.getText().toString(), etDesc.getText().toString(),
                                     etLocation.getText().toString(), FormatDate.unformat(btnStartDate.getText().toString()),
                                     FormatDate.unformat(btnEndDate.getText().toString()),
                                     DayItem.DayType.fromInt(spinnerClassDay.getSelectedItemPosition())).save();
+
+                            ((NewClassDialogListener)getTargetFragment()).onFinishNewDialog();
+
                             builder.dismiss();
                         } catch (Exception e) {
-                            Toast.makeText(getActivity().getApplicationContext(), "Title must not be empty", Toast.LENGTH_LONG).show();
-//                            Toast.makeText(getActivity().getApplicationContext(), res.getString(R.string.toast_empty_title), Toast.LENGTH_LONG).show();
+//                            Toast.makeText(getActivity().getApplicationContext(), "Title must not be empty", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getActivity().getApplicationContext(), res.getString(R.string.toast_empty_title), Toast.LENGTH_LONG).show();
                         }
                     }
                 });

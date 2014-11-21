@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">ClassScheduler</string>
+    <string name="app_name">Class Scheduler</string>
     <string name="title_class_detail">Class Detail</string>
     <string name="title_activity_create_new_class">CreateNewClass</string>
     <string name="hello_world">Hello world!</string>
@@ -14,5 +14,11 @@
     <string name="toast_empty_title">Title must not be empty</string>
     <string name="title_day_detail">List O\' Classes</string>
     <string name="title_activity_create_new_class2">CreateNewClass2</string>
+    <string name="delete_all">Delete All</string>
+    <string name="add_new_item">Add new item</string>
+    <string name="title_delete_all_classes">Delete All Classes</string>
+    <string name="message_reaffirm_delete">Are you sure you want to delete all classes?</string>
+    <string name="label_ok">OK</string>
+    <string name="label_cancel">Cancel</string>
 
 </resources>
