@@ -7,10 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ListView;
 
-
-import java.util.ArrayList;
+import java.util.List;
 
 import hu.ait.tiffanynguyen.classscheduler.adapter.ClassAdapter;
 import hu.ait.tiffanynguyen.classscheduler.data.DayItem;
@@ -76,40 +74,14 @@ public class DayDetailFragment extends ListFragment implements CreateNewClass.Ne
         super.onActivityCreated(savedInstanceState);
         Log.v("ListFragment", "onActivityCreated().");
         Log.v("ListsavedInstanceState", savedInstanceState == null ? "true" : "false");
-
-        //Generate list View from ArrayList
-        displayListView();
-
     }
 
-    private void displayListView() {
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        getListView().setTextFilterEnabled(true);
 
-        //Array list of countries
-        ArrayList<MyClass> al = new ArrayList<MyClass>();
-        al.add(new MyClass("1title", "", "", 0, 0, DayItem.DayType.MONDAY));
-        al.add(new MyClass("title2", "", "", 0, 0, DayItem.DayType.TUESDAY));
-
-//        MyClass m1 = new MyClass("title2", "", "", 0, 0, DayItem.DayType.TUESDAY);
-//        m1.save();
-//        MyClass m2 = new MyClass("1title", "", "", 0, 0, DayItem.DayType.MONDAY);
-//        m2.save();
-
-//        List<MyClass> classList = MyClass.listAll(MyClass.class);//Select.from(MyClass.class).where(Condition.prop("day").eq(mItem.getDay())).orderBy("startTime").list();
-
-        //create an ArrayAdaptar from the String Array
-        ListView listView = getListView();
-
-        ClassAdapter adapter = new ClassAdapter(getActivity().getApplicationContext(),
-                //classList);
-                al);
-
-        // Assign adapter to ListView
-        listView.setAdapter(adapter);
-
-        //enables filtering for the contents of the given ListView
-        listView.setTextFilterEnabled(true);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 Log.i("LOG_CLICK", "clicked!");
@@ -117,10 +89,41 @@ public class DayDetailFragment extends ListFragment implements CreateNewClass.Ne
             }
         });
 
+        refreshList();
+    }
+
+    private void displayListView() {
+
+        //Array list of countries
+        //ArrayList<MyClass> al = new ArrayList<MyClass>();
+        //al.add(new MyClass("1title", "", "", 0, 0, DayItem.DayType.MONDAY));
+        //al.add(new MyClass("title2", "", "", 0, 0, DayItem.DayType.TUESDAY));
+
+//        MyClass m1 = new MyClass("title2", "", "", 0, 0, DayItem.DayType.TUESDAY);
+//        m1.save();
+//        MyClass m2 = new MyClass("1title", "", "", 0, 0, DayItem.DayType.MONDAY);
+//        m2.save();
+
+        //Select.from(MyClass.class).where(Condition.prop("day").eq(mItem.getDay())).orderBy("startTime").list();
+
+        //create an ArrayAdaptar from the String Array
+
+
+        //enables filtering for the contents of the given ListView
+
+
+    }
+
+    private void refreshList() {
+        List<MyClass> classList = MyClass.listAll(MyClass.class);
+        ClassAdapter adapter = new ClassAdapter(getActivity().getApplicationContext(),
+                classList);
+        // Assign adapter to ListView
+        getListView().setAdapter(adapter);
     }
 
     @Override
     public void onFinishNewDialog() {
-        ((ClassAdapter) getListAdapter()).notifyDataSetChanged();
+        refreshList();
     }
 }

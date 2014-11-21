@@ -17,7 +17,7 @@ public class MyClass extends SugarRecord<MyClass> implements Serializable {
     DayItem.DayType day;
 
     // needed for SugarORM
-    MyClass() {}
+    public MyClass() {}
 
 
     public MyClass(String title, String description, String location, int startTime, int endTime, DayItem.DayType day) {

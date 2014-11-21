@@ -120,6 +120,9 @@ public class CreateNewClass extends DialogFragment {
                                     etLocation.getText().toString(), FormatDate.unformat(btnStartDate.getText().toString()),
                                     FormatDate.unformat(btnEndDate.getText().toString()),
                                     DayItem.DayType.fromInt(spinnerClassDay.getSelectedItemPosition())).save();
+
+                            ((NewClassDialogListener)getTargetFragment()).onFinishNewDialog();
+
                             builder.dismiss();
                         } catch (Exception e) {
                             Toast.makeText(getActivity().getApplicationContext(), "Title must not be empty", Toast.LENGTH_LONG).show();
