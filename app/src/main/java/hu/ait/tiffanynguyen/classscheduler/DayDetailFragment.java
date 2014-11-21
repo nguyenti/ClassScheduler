@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import com.orm.query.Condition;
 import com.orm.query.Select;
 
+
 import java.util.List;
 
 import hu.ait.tiffanynguyen.classscheduler.adapter.ClassAdapter;
